@@ -13,8 +13,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
+            color: #e8e8e8;
             overflow-x: hidden;
             position: relative;
         }
@@ -38,32 +38,32 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 200px;
-            background: radial-gradient(ellipse at top, rgba(255,255,255,0.15) 0%, transparent 70%);
+            height: 250px;
+            background: radial-gradient(ellipse at top, rgba(255,255,255,0.25) 0%, rgba(200,200,200,0.1) 40%, transparent 70%);
         }
 
         .edge-glow.left {
             top: 0;
             left: 0;
             bottom: 0;
-            width: 200px;
-            background: radial-gradient(ellipse at left, rgba(255,255,255,0.1) 0%, transparent 70%);
+            width: 250px;
+            background: radial-gradient(ellipse at left, rgba(220,220,220,0.15) 0%, rgba(150,150,150,0.08) 40%, transparent 70%);
         }
 
         .edge-glow.right {
             top: 0;
             right: 0;
             bottom: 0;
-            width: 200px;
-            background: radial-gradient(ellipse at right, rgba(255,255,255,0.1) 0%, transparent 70%);
+            width: 250px;
+            background: radial-gradient(ellipse at right, rgba(220,220,220,0.15) 0%, rgba(150,150,150,0.08) 40%, transparent 70%);
         }
 
         .edge-glow.bottom {
             bottom: 0;
             left: 0;
             right: 0;
-            height: 200px;
-            background: radial-gradient(ellipse at bottom, rgba(255,255,255,0.15) 0%, transparent 70%);
+            height: 250px;
+            background: radial-gradient(ellipse at bottom, rgba(255,255,255,0.25) 0%, rgba(200,200,200,0.1) 40%, transparent 70%);
         }
 
         .page {
@@ -93,7 +93,7 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(15, 15, 15, 0.95); /* Increased opacity for mobile readability */
+            background: rgba(15, 15, 15, 0.85);
             backdrop-filter: blur(20px);
             padding: 20px 40px;
             z-index: 1000;
@@ -115,7 +115,6 @@
             color: #fff;
             letter-spacing: 3px;
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-            z-index: 1001; /* Ensure logo stays above mobile menu */
         }
 
         .nav-links {
@@ -156,26 +155,10 @@
             width: 100%;
         }
 
-        /* Hamburger Menu Styles */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            z-index: 1001;
-        }
-        
-        .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            background-color: #fff;
-            transition: all 0.3s ease-in-out;
-        }
-
         .sticky-header {
             position: sticky;
-            top: 90px;
-            background: rgba(20, 20, 20, 0.95);
+            top: 80px;
+            background: rgba(20, 20, 20, 0.9);
             backdrop-filter: blur(15px);
             padding: 30px;
             border-radius: 12px;
@@ -192,7 +175,6 @@
             color: #fff;
             letter-spacing: 3px;
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-            line-height: 1.1;
         }
 
         h2 {
@@ -538,20 +520,16 @@
             color: #fff;
         }
 
-        /* Table Styles - Wrapper for scrolling */
-        .table-wrapper {
-            overflow-x: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            margin: 20px 0;
-        }
-
+        /* Table Styles */
         table {
             width: 100%;
             border-collapse: collapse;
+            margin: 20px 0;
             background: rgba(20, 20, 20, 0.8);
             backdrop-filter: blur(10px);
-            min-width: 600px; /* Ensure table doesn't squish too much */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         th, td {
@@ -575,7 +553,7 @@
 
         tr:hover {
             background: rgba(255, 255, 255, 0.05);
-            transform: scale(1.0); /* Removed scale on table hover for mobile stability */
+            transform: scale(1.02);
         }
 
         .keywords {
@@ -583,7 +561,6 @@
             flex-wrap: wrap;
             gap: 10px;
             margin: 20px 0;
-            justify-content: center;
         }
 
         .keyword {
@@ -637,7 +614,6 @@
 
         .hero-content {
             animation: fadeInUp 1s ease;
-            width: 100%;
         }
 
         @keyframes fadeInUp {
@@ -701,7 +677,6 @@
         .team-card p {
             font-size: 14px;
             color: #999;
-            word-break: break-all; /* Prevent email overflow */
         }
 
         .card {
@@ -734,7 +709,6 @@
             font-size: 14px;
             color: #bbb;
             transition: all 0.3s;
-            word-wrap: break-word;
         }
 
         .reference-item:hover {
@@ -759,97 +733,16 @@
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
-        /* Responsive Media Queries */
-        @media (max-width: 900px) {
-            h1 { font-size: 48px; }
-            h2 { font-size: 36px; }
-            .card { padding: 30px; }
-            nav { padding: 15px 20px; }
-        }
-
         @media (max-width: 768px) {
-            .page { padding-top: 100px; }
-            h1 { font-size: 36px; }
-            h2 { font-size: 28px; }
-            
-            /* Mobile Navigation */
-            .hamburger {
-                display: block;
-            }
-
-            .hamburger.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-
-            .nav-links {
-                position: fixed;
-                left: -100%;
-                top: 60px; /* Below navbar */
-                gap: 0;
-                flex-direction: column;
-                background-color: rgba(10, 10, 10, 0.98);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                padding: 20px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-                box-shadow: 0 10px 10px rgba(0,0,0,0.5);
-                display: flex; /* Ensure it is flex */
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                margin: 15px 0;
-            }
-
-            .nav-links a {
-                font-size: 18px;
-                display: block;
-                padding: 10px;
-            }
-
-            /* Timeline Adjustments for Mobile */
-            .timeline::before { 
-                left: 20px; 
-            }
-            
-            .timeline-item { 
-                flex-direction: column !important; 
-                margin: 40px 0;
-            }
-            
-            .timeline-content { 
-                width: calc(100% - 50px); 
-                margin-left: 50px !important; 
-                transform: translateX(0) !important;
-            }
-            
-            .timeline-dot { 
-                left: 20px; 
-            }
-
-            /* Comparison and Layouts */
+            h1 { font-size: 42px; }
+            h2 { font-size: 32px; }
+            .nav-links { display: none; }
+            .timeline::before { left: 20px; }
+            .timeline-item { flex-direction: column !important; }
+            .timeline-content { width: 100%; margin-left: 40px; }
+            .timeline-dot { left: 20px; }
             .split-comparison { grid-template-columns: 1fr; }
-            .sticky-header { top: 70px; padding: 20px; }
-            
-            .stats-grid, .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-box {
-                padding: 25px;
-            }
+            .sticky-header { top: 70px; }
         }
     </style>
 </head>
@@ -864,13 +757,6 @@
     <nav>
         <div class="nav-content">
             <div class="logo">CHRONO PULSE</div>
-            
-            <div class="hamburger" onclick="toggleMenu()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-
             <ul class="nav-links">
                 <li><a onclick="showPage('home')">Home</a></li>
                 <li><a onclick="showPage('intro')">Introduction</a></li>
@@ -882,6 +768,7 @@
         </div>
     </nav>
 
+    <!-- HOME PAGE -->
     <div id="home" class="page active">
         <div class="hero">
             <div class="container hero-content">
@@ -945,6 +832,7 @@
         </div>
     </div>
 
+    <!-- INTRODUCTION PAGE -->
     <div id="intro" class="page">
         <div class="container">
             <div class="sticky-header">
@@ -1021,6 +909,7 @@
         </div>
     </div>
 
+    <!-- METHODS PAGE -->
     <div id="methods" class="page">
         <div class="container">
             <div class="sticky-header">
@@ -1030,50 +919,48 @@
 
             <div class="card">
                 <h3>Materials Breakdown</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Component</th>
-                                <th>Quantity</th>
-                                <th>Source</th>
-                                <th>Cost</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>💡 Laser Diode</strong><br><small>Light beam source</small></td>
-                                <td>1</td>
-                                <td>Old laser pointer</td>
-                                <td><strong>0 EGP</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>📡 Laser Receiver</strong><br><small>Beam detection sensor</small></td>
-                                <td>1</td>
-                                <td>Recycled mouse</td>
-                                <td><strong>0 EGP</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>📺 LCD Display (2×16)</strong><br><small>Data presentation</small></td>
-                                <td>1</td>
-                                <td>Old printer</td>
-                                <td><strong>0 EGP</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>🔧 ATmega328P</strong><br><small>Microcontroller brain</small></td>
-                                <td>1</td>
-                                <td>Recycled Arduino</td>
-                                <td><strong>170 EGP</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>⚡ PCB Board</strong><br><small>Circuit connections</small></td>
-                                <td>1</td>
-                                <td>Waste copper</td>
-                                <td><strong>5 EGP</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Quantity</th>
+                            <th>Source</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>💡 Laser Diode</strong><br><small>Light beam source</small></td>
+                            <td>1</td>
+                            <td>Old laser pointer</td>
+                            <td><strong>0 EGP</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>📡 Laser Receiver</strong><br><small>Beam detection sensor</small></td>
+                            <td>1</td>
+                            <td>Recycled mouse</td>
+                            <td><strong>0 EGP</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>📺 LCD Display (2×16)</strong><br><small>Data presentation</small></td>
+                            <td>1</td>
+                            <td>Old printer</td>
+                            <td><strong>0 EGP</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>🔧 ATmega328P</strong><br><small>Microcontroller brain</small></td>
+                            <td>1</td>
+                            <td>Recycled Arduino</td>
+                            <td><strong>170 EGP</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>⚡ PCB Board</strong><br><small>Circuit connections</small></td>
+                            <td>1</td>
+                            <td>Waste copper</td>
+                            <td><strong>5 EGP</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <div class="card">
@@ -1148,6 +1035,7 @@
         </div>
     </div>
 
+    <!-- RESULTS PAGE -->
     <div id="results" class="page">
         <div class="container">
             <div class="sticky-header">
@@ -1157,39 +1045,37 @@
 
             <div class="card">
                 <h3>Measurement Results</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Trial</th>
-                                <th>Measured Acceleration (m/s²)</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Trial 1</td>
-                                <td>9.652</td>
-                                <td>✅ Pass</td>
-                            </tr>
-                            <tr>
-                                <td>Trial 2</td>
-                                <td>9.698</td>
-                                <td>✅ Pass</td>
-                            </tr>
-                            <tr>
-                                <td>Trial 3</td>
-                                <td>9.687</td>
-                                <td>✅ Pass</td>
-                            </tr>
-                            <tr style="background: rgba(255, 255, 255, 0.08);">
-                                <td><strong>Average</strong></td>
-                                <td><strong>9.679 m/s²</strong></td>
-                                <td><strong>✅ Exceeds Requirements</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Trial</th>
+                            <th>Measured Acceleration (m/s²)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Trial 1</td>
+                            <td>9.652</td>
+                            <td>✅ Pass</td>
+                        </tr>
+                        <tr>
+                            <td>Trial 2</td>
+                            <td>9.698</td>
+                            <td>✅ Pass</td>
+                        </tr>
+                        <tr>
+                            <td>Trial 3</td>
+                            <td>9.687</td>
+                            <td>✅ Pass</td>
+                        </tr>
+                        <tr style="background: rgba(255, 255, 255, 0.08);">
+                            <td><strong>Average</strong></td>
+                            <td><strong>9.679 m/s²</strong></td>
+                            <td><strong>✅ Exceeds Requirements</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <div class="stats-grid" style="margin-top: 40px;">
                     <div class="stat-box">
@@ -1293,6 +1179,7 @@
         </div>
     </div>
 
+    <!-- CONCLUSION PAGE -->
     <div id="conclusion" class="page">
         <div class="container">
             <div class="sticky-header">
@@ -1401,6 +1288,7 @@
         </div>
     </div>
 
+    <!-- REFERENCES PAGE -->
     <div id="references" class="page">
         <div class="container">
             <div class="sticky-header">
@@ -1416,35 +1304,19 @@
                     </div>
 
                     <div class="reference-item">
-                        PASCO Scientific. (2019, August 2). <em>012-06379B Instruction Manual and Experiment Guide for PASCO ME-9215B Photogate Timer</em> [Catalogue/manual].
+                        PASCO Scientific. (2019, August 2). <em>012-06379B Instruction Manual and Experiment Guide for PASCO ME-9215B Photogate Timer</em> [Catalogue/manual]. <a href="https://share.google/Zytw28mK2cEU9OfLW" target="_blank">https://share.google/Zytw28mK2cEU9OfLW</a>
                     </div>
 
                     <div class="reference-item">
-                        New York University Physics Lab. (2016). <em>Newton's 2nd law.</em> Retrieved from <a href="https://physics.nyu.edu/~physlab/GenPhysI_PhysII/Final%20Draft%20of%20General%20Physics%20I%20write%20ups/Newton's-2nd-law-09-30-2016.pdf" target="_blank">NYU Physics Lab</a>
+                        Bonanno, A., Camarca, M., & Sapia, P. (2021). Optimizing acceleration measurements using a single photogate. <em>European Journal of Physics, 42</em>(5), 055703. <a href="https://doi.org/10.1088/1361-6404/abf286" target="_blank">https://doi.org/10.1088/1361-6404/abf286</a>
                     </div>
 
                     <div class="reference-item">
-                        Horowitz, P., & Hill, W. (2015). <em>The Art of Electronics</em> (3rd ed.). Cambridge University Press.
+                        Nilsson, J. W., & Riedel, S. A. (2022). <em>Electric circuits</em> (12th ed.). Pearson. <a href="https://downloads.laboratoryb.org/books/ELECTRIC_CIRCUITS12e-James_W._Nilsson.pdf" target="_blank">https://downloads.laboratoryb.org/books/ELECTRIC_CIRCUITS12e-James_W._Nilsson.pdf</a>
                     </div>
 
                     <div class="reference-item">
-                        Atmel Corporation. (2011). <em>8-bit AVR Microcontroller with 32K Bytes In-System Programmable Flash: ATmega32/ATmega32L</em> (Datasheet No. 2503).
-                    </div>
-
-                    <div class="reference-item">
-                        CODATA Value: Standard Acceleration of Gravity. (n.d.). Retrieved from physics standards references.
-                    </div>
-
-                    <div class="reference-item">
-                        Sensoneo. (2025). <em>Waste Management Systems: International Comparisons.</em>
-                    </div>
-
-                    <div class="reference-item">
-                        An Overview of Egypt's Waste Management Landscape. (n.d.). Environmental Policy Research.
-                    </div>
-
-                    <div class="reference-item">
-                        Faux, D., & Godolphin, J. (2019). <em>Comparative Analysis of Timing Methods in Physics Education.</em>
+                        Juan-Chico, J. (2021). <em>Unit 5. Study of a real computer: Atmega328P microcontroller</em> [Lecture notes]. Departamento de Tecnología Electrónica, Universidad de Sevilla. <a href="https://www.dte.us.es/docencia/etsii/gii-is/estructura-de-computadores/grupo-5/units/unit-5.study-of-a-real-computer/unit-05-avr.pdf" target="_blank">https://www.dte.us.es/docencia/etsii/gii-is/estructura-de-computadores/grupo-5/units/unit-5.study-of-a-real-computer/unit-05-avr.pdf</a>
                     </div>
                 </div>
             </div>
@@ -1486,15 +1358,6 @@
     </div>
 
     <script>
-        // Toggle Mobile Menu
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        }
-
         // Canvas animation
         const canvas = document.getElementById('canvas-bg');
         const ctx = canvas.getContext('2d');
@@ -1584,13 +1447,6 @@
             pages.forEach(page => {
                 page.classList.remove('active');
             });
-
-            // Close mobile menu if open
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            if (hamburger.classList.contains('active')) {
-                toggleMenu();
-            }
             
             setTimeout(() => {
                 document.getElementById(pageId).classList.add('active');
